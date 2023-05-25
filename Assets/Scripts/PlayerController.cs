@@ -26,7 +26,17 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector2.right * moveSpeed * horizontalInput * Time.deltaTime);
+        animator.SetFloat("moveSpeed", Mathf.Abs(horizontalInput));
+        if (horizontalInput <= 0)
+        {
+            sr.flipX = true;
+        }
+        else if (horizontalInput >= 0)
+        {
+            sr.flipX = false;
+        }
     }
     
 }
