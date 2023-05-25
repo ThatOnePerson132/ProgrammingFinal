@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
     public SpriteRenderer sr;
     public Rigidbody2D rb;
+   
     public float moveSpeed;
+    /*     
     public float horizontalInput;
+    */
+    public Transform wallDetector;
     public GameManager gm;
     public Animator animator;
-    public float ballThrow;
     public float ballThrowDelay;
     public bool canThrow = true;
+    public GameObject ball;
+    public GameObject ballSpawner;
 
 
     void Start()
@@ -26,16 +32,36 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector2.right * moveSpeed * horizontalInput * Time.deltaTime);
-        animator.SetFloat("moveSpeed", Mathf.Abs(horizontalInput));
-        if (horizontalInput <= 0)
-        {
+        /*  horizontalInput = Input.GetAxis("Horizontal");
+          transform.Translate(Vector2.right * moveSpeed * horizontalInput * Time.deltaTime);
+          animator.SetFloat("moveSpeed", Mathf.Abs(horizontalInput));
+          if (horizontalInput <= 0)
+          {
             sr.flipX = true;
-        }
-        else if (horizontalInput >= 0)
+          }
+          else if (horizontalInput >= 0)
+          {
+              sr.flipX = false;
+          }
+        */
+
+        transform.Translate(Vector2.right * Time.deltaTime * moveSpeed);
+
+        if (wallDetector != null)
         {
-            sr.flipX = false;
+            RaycastHit2D ground = Physics2D.Raycast(wallDetector.position, Vector2.right, .5f);
+            if (ground.collider == true)
+            {
+                transform.Rotate(0, 180, 0);
+            }
+        }
+
+        if (Input.GetButtonDown("Jump") && canThrow)
+        {
+            canThrow = false;
+            Instantiate(ball, ballSpawner.transform.position, ballSpawner.transform.rotation);
+            new WaitForSeconds(ballThrowDelay);
+            canThrow = true;
         }
     }
     
