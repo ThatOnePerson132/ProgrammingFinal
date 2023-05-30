@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7709675462167192040}
   - component: {fileID: 7709675462167192043}
   - component: {fileID: -7727910658803374522}
+  - component: {fileID: -5362046776542376743}
   m_Layer: 0
   m_Name: Ball2
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,3 +138,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowerLimit: -58
+  pointValue: 5
+  cc: {fileID: -5362046776542376743}
+  sz1: {fileID: 0}
+  sz1Collider: {fileID: 1936072275372217403, guid: d6c757b0509d8ca4b8f2c7f01632e1d7, type: 3}
+--- !u!58 &-5362046776542376743
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7709675462167192055}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: a7e9a1ac2d4a26c45b9b0eacb9b2c355, type: 2}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6

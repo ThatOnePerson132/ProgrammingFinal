@@ -56,9 +56,10 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Jump") && canThrow)
+        if (Input.GetButtonDown("Jump") && canThrow && gm.ballsremaining >= 1)
         {
             canThrow = false;
+            gm.ballsremaining--;
             Instantiate(ball, ballSpawner.transform.position, ballSpawner.transform.rotation);
             new WaitForSeconds(ballThrowDelay);
             canThrow = true;

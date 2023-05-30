@@ -12,6 +12,8 @@ TagManager:
   - -100
   - -500
   - Ground
+  - Ball
+  - Scorezone
   layers:
   - Default
   - TransparentFX

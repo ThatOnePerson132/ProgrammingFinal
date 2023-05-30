@@ -9,13 +9,13 @@ public class Scorezone : MonoBehaviour
     //public Ball[] balls;
     public Ball ball;
 
-    public bool x1 = false;
-    public bool x2 = false;
-    public bool x5 = false;
-    public bool x10 = false;
-    public bool neg50 = false;
-    public bool neg100 = false;
-    public bool neg500 = false;
+    public bool x1 = true;
+    public bool x2 = true;
+    public bool x5 = true;
+    public bool x10 = true;
+    public bool neg5 = true;
+    public bool neg10 = true;
+    public bool neg15 = true;
 
     // Start is called before the first frame update
     void Start()
@@ -49,17 +49,17 @@ public class Scorezone : MonoBehaviour
         {
             gm.score += ball.pointValue * 10;
         }
-        if (collision.gameObject.CompareTag("Ball") && neg50 == true)
+        if (collision.gameObject.CompareTag("Ball") && neg5 == true)
         {
-            gm.score -= 50;
+            gm.score -= ball.pointValue;
         }
-        if (collision.gameObject.CompareTag("Ball") && neg100 == true)
+        if (collision.gameObject.CompareTag("Ball") && neg10 == true)
         {
-            gm.score -= 100;
+            gm.score -= ball.pointValue * 2;
         }
-        if (collision.gameObject.CompareTag("Ball") && neg500 == true)
+        if (collision.gameObject.CompareTag("Ball") && neg15 == true)
         {
-            gm.score -= 500;
+            gm.score -= ball.pointValue * 3;
         }
     }
 
