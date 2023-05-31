@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public float ballThrowDelay;
     public bool canThrow = true;
-    public GameObject ball;
+    public GameObject[] balls;
     public GameObject ballSpawner;
 
 
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         animator = GetComponent<Animator>();
-
+        balls = GameObject.FindGameObjectsWithTag("Ball");
     }
 
     void Update()
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             canThrow = false;
             gm.ballsremaining--;
-            Instantiate(ball, ballSpawner.transform.position, ballSpawner.transform.rotation);
+            Instantiate(balls[Random.Range(0,1)], ballSpawner.transform.position, ballSpawner.transform.rotation);
             new WaitForSeconds(ballThrowDelay);
             canThrow = true;
         }

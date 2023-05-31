@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Plinko.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Winner.unity
+    guid: ce5dbf4241a853a419b35231301c56e7
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 70fa1bbdf35c18c4785f7a15c5427ed2
+  - enabled: 1
+    path: Assets/Scenes/Loser.unity
+    guid: dc7952f1033dafa43b68991915e3373a
   m_configObjects: {}
