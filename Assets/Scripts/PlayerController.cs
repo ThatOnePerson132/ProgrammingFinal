@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             canThrow = false;
             gm.ballsremaining--;
-            Instantiate(balls[Random.Range(0,1)], ballSpawner.transform.position, ballSpawner.transform.rotation);
+            Instantiate(balls[Random.Range(0,2)], ballSpawner.transform.position, ballSpawner.transform.rotation);
             new WaitForSeconds(ballThrowDelay);
             canThrow = true;
         }

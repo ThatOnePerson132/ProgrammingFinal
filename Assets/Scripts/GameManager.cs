@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     public void Winner()
     {
-        if (score >= 650 && ballsremaining == 0 && ballsOnScene == 0)
+        if (score >= 650 && ballsremaining == 0 && ballsOnScene == 2)
         {
             StartCoroutine(LoadWin());
         }
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     public void Loser()
     {
-        if (score <= 649 && ballsremaining == 0 && ballsOnScene == 0)
+        if (score <= 649 && ballsremaining == 0 && ballsOnScene == 2)
         {
             StartCoroutine(LoadLose());
         }
