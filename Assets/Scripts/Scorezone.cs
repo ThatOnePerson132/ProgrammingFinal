@@ -20,7 +20,7 @@ public class Scorezone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gm = GameObject.Find("Gamemanager").GetComponent<GameManager>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         //balls = GameObject.FindObjectsOfType<Ball>();
         ball = GameObject.Find("Ball").GetComponent<Ball>();
     }

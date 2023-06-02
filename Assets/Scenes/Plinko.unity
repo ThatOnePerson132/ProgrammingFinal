@@ -16666,6 +16666,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1350979627}
     - target: {fileID: 2828229517741789817, guid: eda6b738af4a8f849b6f84c19ea6f535, type: 3}
+      propertyPath: isGameActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828229517741789817, guid: eda6b738af4a8f849b6f84c19ea6f535, type: 3}
       propertyPath: RemainingBallsText
       value: 
       objectReference: {fileID: 1846862557}

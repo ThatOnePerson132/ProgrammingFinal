@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public PlayerController pc;
 
+    public bool isGameActive = false;
+
     public float ballsremaining;
     public TextMeshProUGUI RemainingBallsText;
 
@@ -30,16 +32,44 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ballsOnScene = GameObject.FindObjectsOfType<Ball>().Length;
-        ScoreText.SetText("Score: " + score);
-        RemainingBallsText.SetText("RemainingBalls: " + ballsremaining);
-        Winner();
-        Loser();
+        //BUTTONS
+        if(Input.GetButtonDown("Fire2") && isGameActive == false)
+        {
+            StartGame();
+        }
+
+        if (Input.GetButtonDown("Fire3") && isGameActive == false)
+        {
+            ToTitle();
+        }
+
+        if (Input.GetButtonDown("Fire4") && isGameActive == false)
+        {
+            Quit();
+        }
+
+
+        if (isGameActive == true)
+        {
+         ballsOnScene = GameObject.FindObjectsOfType<Ball>().Length;
+         ScoreText.SetText("Score: " + score);
+         RemainingBallsText.SetText("RemainingBalls: " + ballsremaining);
+        }
+
+
+         Winner();
+         Loser();
+        
+
+
+
+
+
     }
 
     public void Winner()
     {
-        if (score >= 650 && ballsremaining == 0 && ballsOnScene == 2)
+        if (score >= 750 && ballsremaining == 0 && ballsOnScene == 2)
         {
             StartCoroutine(LoadWin());
         }
@@ -49,15 +79,15 @@ public class GameManager : MonoBehaviour
     IEnumerator LoadWin()
     {
         
-        
-           yield return new WaitForSeconds(5);
-            SceneManager.LoadScene("Winner");
+            
+        yield return new WaitForSeconds(5);  
+        SceneManager.LoadScene("Winner");
         
     }
 
     public void Loser()
     {
-        if (score <= 649 && ballsremaining == 0 && ballsOnScene == 2)
+        if (score <= 749 && ballsremaining == 0 && ballsOnScene == 2)
         {
             StartCoroutine(LoadLose());
         }
@@ -75,16 +105,20 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        isGameActive = true;
         SceneManager.LoadScene("Plinko");
+        isGameActive = true;
     }
 
     public void Restart()
     {
         SceneManager.LoadScene("Plinko");
+        isGameActive = true;
     }
 
     public void ToTitle()
     {
+        isGameActive = false;
         SceneManager.LoadScene("TitleScreen");
     }
 

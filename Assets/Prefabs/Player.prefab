@@ -85,7 +85,7 @@ SpriteRenderer:
   m_Size: {x: 4.6, y: 6.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &503210747240530472
@@ -164,15 +164,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 503210747240530467}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b619c59479bf944429383304ce6beeb7, type: 3}
+  m_Script: {fileID: 11500000, guid: a40921a58980ad141b218323e8b12460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sr: {fileID: 503210747240530471}
-  rb: {fileID: 503210747240530470}
-  moveSpeed: 10
-  horizontalInput: 0
-  isOnGround: 1
-  jumpForce: 5
-  lowerLimit: -20
+  sr: {fileID: 0}
+  rb: {fileID: 0}
+  moveSpeed: 0
+  wallDetector: {fileID: 0}
   gm: {fileID: 0}
-  animator: {fileID: 503210747240530469}
+  animator: {fileID: 0}
+  ballThrowDelay: 0
+  canThrow: 1
+  balls: []
+  ballSpawner: {fileID: 0}

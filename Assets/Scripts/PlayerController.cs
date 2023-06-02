@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Jump") && canThrow && gm.ballsremaining >= 1)
+        if (Input.GetButtonDown("Fire1") && canThrow && gm.ballsremaining >= 1)
         {
             canThrow = false;
             gm.ballsremaining--;
